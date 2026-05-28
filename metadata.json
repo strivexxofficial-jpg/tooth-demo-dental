@@ -1,0 +1,6 @@
+{
+  "name": "Premium Dental Clinic Website",
+  "description": "A responsive, single-page React template for a premium dental clinic focusing on trust and patient psychology.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
