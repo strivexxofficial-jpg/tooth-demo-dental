@@ -70,7 +70,7 @@ const Navbar = () => {
 };
 
 // ── Hero ───────────────────────────────────────────────────────────────────────
-const Hero = () => (
+const HeroDesktop = () => (
   <div style={{
     background: '#C5E4F3',
     width: '100%',
@@ -252,7 +252,149 @@ const Hero = () => (
 
   </div>
 );
+const HeroMobile = () => (
 
+ <section
+    style={{
+      background: '#C5E4F3',
+      paddingTop: '90px',
+      paddingBottom: '30px',
+    }}
+  >
+    <div
+      style={{
+        width: '94%',
+        margin: '0 auto',
+        borderRadius: '24px',
+        background:
+          'linear-gradient(120deg,#C5E8F9 0%,#D8F2FF 25%,#ECF8FF 50%,#FFFFFF 72%)',
+        padding: '24px',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
+      }}
+    >
+      <h1
+        style={{
+          textAlign: 'center',
+          fontSize: '2.3rem',
+          fontWeight: 900,
+          lineHeight: 1,
+          color: '#0AB8FD',
+          marginBottom: '20px',
+        }}
+      >
+        EVERY SMILE
+        <br />
+        MATTERS
+      </h1>
+
+      <img
+        src={toothImg}
+        alt="3D Tooth"
+        style={{
+          width: '220px',
+          display: 'block',
+          margin: '0 auto',
+        }}
+      />
+
+      <p
+        style={{
+          marginTop: '20px',
+          textAlign: 'center',
+          color: '#333',
+          lineHeight: 1.7,
+        }}
+      >
+        Our skilled dentists use advanced technology to offer complete care in a
+        comfortable and friendly environment.
+      </p>
+
+      <div
+        style={{
+          textAlign: 'center',
+          marginTop: '18px',
+        }}
+      >
+        <div style={{ color: '#888' }}>We're Open</div>
+
+        <div
+          style={{
+            fontWeight: 800,
+            marginTop: '4px',
+          }}
+        >
+          10:00 AM – 07:00 PM
+        </div>
+      </div>
+
+      <a
+        href="tel:[PHONE]"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          marginTop: '20px',
+          padding: '16px',
+          borderRadius: '999px',
+          background: '#FF5A1F',
+          color: '#fff',
+          textDecoration: 'none',
+          fontWeight: 700,
+        }}
+      >
+        BOOK APPOINTMENT
+      </a>
+
+      <div
+        style={{
+          display: 'grid',
+          gap: '14px',
+          marginTop: '24px',
+        }}
+      >
+        {[
+          ['150+', 'Expert Dentists'],
+          ['20+', 'Dental Clinics across UK'],
+          ['03+', 'Countries presence'],
+        ].map(([num, label]) => (
+          <div
+            key={num}
+            style={{
+              background: '#fff',
+              borderRadius: '16px',
+              padding: '16px',
+              textAlign: 'center',
+            }}
+          >
+            <div
+              style={{
+                color: '#FF5A1F',
+                fontWeight: 900,
+                fontSize: '2rem',
+              }}
+            >
+              {num}
+            </div>
+
+            <div>{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+const Hero = () => (
+  <>
+    <div className="hidden md:block">
+      <HeroDesktop />
+    </div>
+
+    <div className="block md:hidden">
+      <HeroMobile />
+    </div>
+  </>
+  );
 // ── About ──────────────────────────────────────────────────────────────────────
 const About = () => (
   <section id="about" className="py-20 bg-white">
