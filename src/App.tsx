@@ -205,16 +205,15 @@ const HeroDesktop = () => (
       </div>
 
       {/* TOOTH — top anchored so crown overlaps headline, 1100px width, roots bleed out bottom */}
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '960px',
-        zIndex: 99,
-        pointerEvents: 'none',
-        marginBottom: '-200px',
-      }}>
+<div style={{
+  position: 'absolute',
+  top: '20px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: 'min(960px, 85vw)',  // ← THIS LINE
+  zIndex: 99,
+  pointerEvents: 'none',
+}}>
         <img
           src={toothImg}
           alt="3D Tooth"
