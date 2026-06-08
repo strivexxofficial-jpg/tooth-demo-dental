@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/BookingSection.tsx << 'EOF'
 import React, { useState } from 'react';
 import { Phone, MapPin, Clock, ArrowUpRight, Check, AlertCircle } from 'lucide-react';
 
