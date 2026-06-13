@@ -253,80 +253,144 @@ const HeroDesktop = () => (
   </div>
 );
 const HeroMobile = () => (
-
- <section
+  <section
     style={{
       background: '#C5E4F3',
-      paddingTop: '90px',
-      paddingBottom: '30px',
+      paddingTop: '88px',
+      paddingBottom: '24px',
+      overflow: 'hidden',
     }}
   >
     <div
       style={{
-        width: '94%',
+        width: '95%',
         margin: '0 auto',
-        borderRadius: '24px',
+        borderRadius: '28px',
         background:
           'linear-gradient(120deg,#C5E8F9 0%,#D8F2FF 25%,#ECF8FF 50%,#FFFFFF 72%)',
-        padding: '24px',
         boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
+        padding: '24px 18px 22px',
+        position: 'relative',
       }}
     >
+      {/* WATERMARK */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '18px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '4.8rem',
+          fontWeight: 900,
+          lineHeight: 1,
+          whiteSpace: 'nowrap',
+          opacity: 0.12,
+          pointerEvents: 'none',
+          color: '#00AAFF',
+        }}
+      >
+        SMILE
+      </div>
+
+      {/* HEADLINE */}
       <h1
         style={{
           textAlign: 'center',
-          fontSize: '2.3rem',
+          fontSize: '4rem',
           fontWeight: 900,
-          lineHeight: 1,
+          lineHeight: 0.85,
           color: '#0AB8FD',
-          marginBottom: '20px',
+          margin: '10px 0 0',
+          position: 'relative',
+          zIndex: 2,
+          letterSpacing: '-0.03em',
         }}
       >
-        EVERY SMILE
+        EVERY
+        <br />
+        SMILE
         <br />
         MATTERS
       </h1>
 
-      <img
-        src={toothImg}
-        alt="3D Tooth"
+      {/* TOOTH */}
+      <div
         style={{
-          width: '220px',
-          display: 'block',
-          margin: '0 auto',
-        }}
-      />
-
-      <p
-        style={{
-          marginTop: '20px',
-          textAlign: 'center',
-          color: '#333',
-          lineHeight: 1.7,
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '-15px',
+          position: 'relative',
+          zIndex: 5,
         }}
       >
-        Our skilled dentists use advanced technology to offer complete care in a
-        comfortable and friendly environment.
-      </p>
+        <img
+          src={toothImg}
+          alt="3D Tooth"
+          style={{
+            width: '280px',
+            maxWidth: '75vw',
+            display: 'block',
+            filter: 'drop-shadow(0 20px 30px rgba(0,100,220,0.25))',
+            animation: 'floatUpDown 4s ease-in-out infinite',
+          }}
+        />
+      </div>
 
+      {/* DESCRIPTION CARD */}
+      <div
+        style={{
+          background: '#fff',
+          borderRadius: '20px',
+          padding: '18px',
+          marginTop: '-10px',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
+          position: 'relative',
+          zIndex: 10,
+        }}
+      >
+        <p
+          style={{
+            margin: 0,
+            textAlign: 'center',
+            color: '#333',
+            lineHeight: 1.7,
+            fontSize: '0.95rem',
+          }}
+        >
+          Our skilled dentists use advanced technology to offer complete care
+          in a comfortable and friendly environment.
+        </p>
+      </div>
+
+      {/* HOURS */}
       <div
         style={{
           textAlign: 'center',
           marginTop: '18px',
         }}
       >
-        <div style={{ color: '#888' }}>We're Open</div>
+        <div
+          style={{
+            color: '#888',
+            fontSize: '0.85rem',
+          }}
+        >
+          We're Open
+        </div>
 
         <div
           style={{
             fontWeight: 800,
-            marginTop: '4px',
+            marginTop: '3px',
+            fontSize: '1rem',
+            color: '#111',
           }}
         >
           10:00 AM – 07:00 PM
         </div>
       </div>
 
+      {/* CTA */}
       <a
         href="tel:[PHONE]"
         style={{
@@ -334,50 +398,67 @@ const HeroMobile = () => (
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          marginTop: '20px',
+          marginTop: '18px',
           padding: '16px',
           borderRadius: '999px',
           background: '#FF5A1F',
           color: '#fff',
           textDecoration: 'none',
-          fontWeight: 700,
+          fontWeight: 800,
+          letterSpacing: '0.03em',
+          boxShadow: '0 10px 25px rgba(255,90,31,0.35)',
         }}
       >
         BOOK APPOINTMENT
       </a>
 
+      {/* STATS STRIP */}
       <div
         style={{
-          display: 'grid',
-          gap: '14px',
           marginTop: '24px',
+          background: '#fff',
+          borderRadius: '18px',
+          overflow: 'hidden',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3,1fr)',
+          boxShadow: '0 8px 20px rgba(0,0,0,0.04)',
         }}
       >
         {[
-          ['150+', 'Expert Dentists'],
-          ['20+', 'Dental Clinics across UK'],
-          ['03+', 'Countries presence'],
+          ['150+', 'Dentists'],
+          ['20+', 'Clinics'],
+          ['03+', 'Countries'],
         ].map(([num, label]) => (
           <div
             key={num}
             style={{
-              background: '#fff',
-              borderRadius: '16px',
-              padding: '16px',
               textAlign: 'center',
+              padding: '14px 8px',
+              borderRight:
+                num !== '03+' ? '1px solid #EEF5FA' : 'none',
             }}
           >
             <div
               style={{
                 color: '#FF5A1F',
                 fontWeight: 900,
-                fontSize: '2rem',
+                fontSize: '1.7rem',
+                lineHeight: 1,
               }}
             >
               {num}
             </div>
 
-            <div>{label}</div>
+            <div
+              style={{
+                marginTop: '4px',
+                fontSize: '0.7rem',
+                color: '#666',
+                fontWeight: 600,
+              }}
+            >
+              {label}
+            </div>
           </div>
         ))}
       </div>
